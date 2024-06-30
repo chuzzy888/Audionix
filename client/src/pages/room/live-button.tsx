@@ -11,6 +11,9 @@ export const LiveButton = () => {
     <button
       style={{
         backgroundColor: "rgb(35, 35, 35)",
+        padding: "5px",
+        color: "white",
+        borderRadius: "5px",
         boxShadow: isLive ? "0 0 1px 2px rgba(0, 255, 0, 0.3)" : "none",
       }}
       onClick={async () => {

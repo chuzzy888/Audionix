@@ -6,7 +6,12 @@ export const MicButton = () => {
 
   return (
     <button
-      style={{ backgroundColor: "rgb(125, 7, 236)" }}
+      style={{
+        backgroundColor: "rgb(125, 7, 236)",
+        padding: "5px",
+        color: "white",
+        borderRadius: "5px",
+      }}
       onClick={async () => {
         if (isMute) {
           await microphone?.enable();

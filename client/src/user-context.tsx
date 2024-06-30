@@ -70,7 +70,7 @@ export const UserProvider: FC<UserProviderProps> = (props) => {
     };
 
     const myClient = new StreamVideoClient({
-      apiKey: import.meta.env.VITE_API_KEY,
+      apiKey: "grs7vtwsg6mr",
       user,
       token,
     });

@@ -1,4 +1,6 @@
 import "@stream-io/video-react-sdk/dist/css/styles.css";
+import { TbLogout2 } from "react-icons/tb";
+
 import {
   Navigate,
   Route,
@@ -35,22 +37,21 @@ export default function App() {
           }
         />
       </Routes>
-      <div>
-        <button
-          className="logout-button"
-          onClick={() => {
-            cookies.remove("token");
-            cookies.remove("name");
-            cookies.remove("username");
-            setUser(null);
-            setCall(undefined);
-            window.location.pathname = "/sign-in";
-          }}
-        >
-          {" "}
-          Logout
-        </button>
-      </div>
+
+      <button
+        className="logout-button absolute top-0 m-2 hover:bg-red-500 hover:text-white bg-gray-300 p-1 px-2 text-black  rounded-md"
+        onClick={() => {
+          cookies.remove("token");
+          cookies.remove("name");
+          cookies.remove("username");
+          setUser(null);
+          setCall(undefined);
+          window.location.pathname = "/sign-in";
+        }}
+      >
+        {" "}
+        <TbLogout2 className="text-xl" />
+      </button>
     </Router>
   );
 }
