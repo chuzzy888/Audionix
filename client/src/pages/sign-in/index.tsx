@@ -39,18 +39,22 @@ export const SignIn = () => {
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     const { username, name } = data;
 
-    const response = await fetch("http://localhost:3001/auth/createUser", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username,
-        name,
-        image:
-          PEOPLES_IMAGES[Math.floor(Math.random() * PEOPLES_IMAGES.length)],
-      }),
-    });
+    // const response = await fetch("http://localhost:3001/auth/createUser", {
+    const response = await fetch(
+      "https://audionix.onrender.com/auth/createUser",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username,
+          name,
+          image:
+            PEOPLES_IMAGES[Math.floor(Math.random() * PEOPLES_IMAGES.length)],
+        }),
+      }
+    );
 
     if (!response.ok) {
       throw new Error("Failed to fetch token");
