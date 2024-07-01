@@ -9,8 +9,8 @@ import React, {
   useEffect,
 } from "react";
 import {
-  StreamCall,
-  StreamVideo,
+  // StreamCall,
+  // StreamVideo,
   StreamVideoClient,
   User as StreamUserType,
   Call,

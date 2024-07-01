@@ -1,9 +1,9 @@
 // src/components/Home.js
 
 import React, { useEffect, useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import "../../App.css";
-import { Call, StreamVideo, User } from "@stream-io/video-react-sdk";
+import { Call, StreamVideo } from "@stream-io/video-react-sdk";
 import { useUser } from "../../user-context";
 import CryptoJS from "crypto-js";
 import { BsPeopleFill } from "react-icons/bs";
