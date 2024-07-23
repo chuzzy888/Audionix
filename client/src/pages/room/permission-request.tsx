@@ -131,7 +131,7 @@ export const PermissionRequestsPanel = () => {
         );
         setIsOpen(false);
       } catch (err) {
-        console.error(`Error granting or revoking permissions`, err);
+        console.error(`Error granting or revoking permission`, err);
       }
     },
     [call, currentRequest]
