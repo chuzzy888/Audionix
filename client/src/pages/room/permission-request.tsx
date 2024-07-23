@@ -92,11 +92,9 @@
 //     </div>
 //   );
 // };
-
 import { useCall, PermissionRequestEvent } from "@stream-io/video-react-sdk";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment } from "react";
 
 export const PermissionRequestsPanel = () => {
   const call = useCall();
@@ -130,8 +128,9 @@ export const PermissionRequestsPanel = () => {
           reqs.filter((req) => req !== currentRequest)
         );
         setIsOpen(false);
+        setCurrentRequest(null);
       } catch (err) {
-        console.error(`Error granting or revoking permission`, err);
+        console.error(`Error granting or revoking permissions`, err);
       }
     },
     [call, currentRequest]
@@ -139,6 +138,11 @@ export const PermissionRequestsPanel = () => {
 
   return (
     <>
+      <div className="hidden">
+        {permissionRequests.length > 0 && (
+          <span>Permission requests: {permissionRequests.length}</span>
+        )}
+      </div>
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog
           as="div"
